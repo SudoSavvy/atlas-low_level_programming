@@ -10,9 +10,9 @@
  */
 int main(void)
 {
-    /* Print the desired message with the opening double quote */
-    puts("\"Programming is like building a multilingual puzzle");
+/* Print the desired message with the opening double quote */
+puts("\"Programming is like building a multilingual puzzle");
 
-    return (0);
+return (0);
 }
 
