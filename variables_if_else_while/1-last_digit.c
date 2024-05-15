@@ -15,11 +15,11 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	
-	if (n > 5)
+	if (lastd > 5)
 	{
 		printf("%d is greater than 5\n");
 	}
-	else if (n == 0)
+	else if (lastd == 0)
 	{
 		printf("%d is zero\n")
 	}
