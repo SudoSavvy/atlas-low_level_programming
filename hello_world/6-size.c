@@ -1,10 +1,12 @@
 #include <stdio.h>
 
-/*
-  
- * insert comment funny haha joke 
-
-*/
+/**
+ * main - Entry point of the program
+ *
+ * Description: Prints the size of various data types in bytes.
+ *
+ * Return: Always 0 (Success)
+ */
 
 int main(void){
 
