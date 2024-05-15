@@ -1,3 +1,2 @@
 #!/bin/bash
-5e29cf57.
-Enumerating objects: 6, done.
+gcc -S $CFILE > ${CFILE::-2}".s"
