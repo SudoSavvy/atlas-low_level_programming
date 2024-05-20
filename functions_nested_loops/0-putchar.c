@@ -1,12 +1,25 @@
 #include <stdio.h>
+#include "main.h"
+
 /**
- *main - print _putchar
+ * main - the entry point to my code
  *
- *Return: always return 0
+ * Description: this code should print '_putchar' followed by a new line
+ *
+ * Return: Always 0 (success)
  */
+
 int main(void)
 {
-printf("_putchar\n");
+	char *c;
+	int i;
 
-return (0);
+	c = "_putchar";
+	for (i = 0; c[i] != '\0'; i++)
+	{
+		_putchar(c[i]);
+	}
+	_putchar('\n');
+
+	return (0);
 }
