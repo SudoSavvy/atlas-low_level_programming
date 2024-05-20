@@ -17,7 +17,7 @@ int main(void)
 	c = "_putchar";
 	for (i = 0; c[i] != '\0'; i++)
 	{
-		_putchar(c[i]);
+		putchar(c[i]);
 	}
 	putchar('\n');
 
