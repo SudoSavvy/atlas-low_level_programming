@@ -10,7 +10,7 @@ int main() {
     char src[] = "world!";
 
     _strcat(dest, src);
-    printf("%s\n", dest);  // Output should be "Hello, world!"
+    printf("%s\n", dest);
 
     return 0;
 }
