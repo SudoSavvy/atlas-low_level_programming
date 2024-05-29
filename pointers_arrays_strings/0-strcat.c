@@ -4,8 +4,7 @@
 
 */
 
-char *_strcat(char *dest, char *src);
-int main() {
+int main(void) {
     char dest[100] = "Hello, ";
     char src[] = "world!";
 
