@@ -3,8 +3,7 @@
 *
 */
 
-char *_strcat(char *dest, char *src); 
-{
+char *_strcat(char *dest, char *src);
     char *dest_end = dest;
 
     while (*dest_end != '\0') {
@@ -20,4 +19,4 @@ char *_strcat(char *dest, char *src);
     *dest_end = '\0';
 
     return dest;
-}
+
