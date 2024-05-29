@@ -3,20 +3,12 @@
 *
 */
 
-char *_strcat(char *dest, char *src);
-    char *dest_end = dest;
+int main(void) {
+    char dest[100] = "Hello, ";
+    char src[] = "world!";
 
-    while (*dest_end != '\0') {
-        dest_end++;
-    }
+    _strcat(dest, src);
+    printf("%s\n", dest);  // Output should be "Hello, world!"
 
-    while (*src != '\0') {
-        *dest_end = *src;
-        dest_end++;
-        src++;
-    }
-
-    *dest_end = '\0';
-
-    return *dest;
-
+    return 0;
+}
