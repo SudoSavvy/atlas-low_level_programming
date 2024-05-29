@@ -1,10 +1,11 @@
 #include "main.h"
 #include <stdio.h>
 /*
-
+*
 */
 
-int main(void) {
+int main(void) 
+{
     char dest[100] = "Hello, ";
     char src[] = "world!";
 
