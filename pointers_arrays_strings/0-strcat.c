@@ -1,16 +1,22 @@
 #include "main.h"
-#include <stdio.h>
 /*
 *
 */
 
-int main(void) 
-{
-    char dest[100] = "Hello, ";
-    char src[] = "world!";
+char *_strcat(char *dest, const char *src) {
+    char *dest_end = dest;
 
-    _strcat(dest, src);
-    printf("%s\n", dest);
+    while (*dest_end != '\0') {
+        dest_end++;
+    }
 
-    return 0;
+    while (*src != '\0') {
+        *dest_end = *src;
+        dest_end++;
+        src++;
+    }
+
+    *dest_end = '\0';
+
+    return dest;
 }
