@@ -1,13 +1,12 @@
 #include "main.h"
 
 /**
- * _strcmp: compaes string 1 and string 2
- * s1: string 1
- * s2: string 2
+ * _strcmp - Compares two strings
+ * @s1: The first string
+ * @s2: The second string
  * 
- * return: comparison results.
-*/
-
+ * Return: Difference in ASCII values of first non-matching characters
+ */
 int _strcmp(char *s1, char *s2)
 {
     int i = 0;
@@ -18,9 +17,8 @@ int _strcmp(char *s1, char *s2)
         {
             return (s1[i] - s2[i]);
         }
-
         i++;
-
     }
-    return(0);
+
+    return (s1[i] - s2[i]);
 }
