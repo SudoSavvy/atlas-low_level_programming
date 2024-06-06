@@ -1,39 +1,36 @@
 #include "main.h"
 
 /**
- * _sqfinder - Finds the square root of a number using recursion.
- * @maybe: Maybe natural root, maybe not.
- * @perfect: Perfect square.
+ * _sqfinder - differentiates natural roots from approximates
+ * @maybe: maybe natural root, maybe not
+ * @perfect: perfect square
  *
- * Return: The square root if @maybe is a natural square root, -1 if not.
+ * Return: maybe if natural square root, -1 if not
  */
+
 int _sqfinder(int maybe, int perfect)
 {
-	if ((maybe * maybe) == perfect) /* If @maybe is a natural square root */
+	if ((maybe * maybe) == perfect) /* if approximate is NATURAL ROOT */
 	{
-		return (maybe); /* Return it */
+		return (maybe); /* return that */
 	}
 
-	if ((maybe * maybe) > perfect) /* If @maybe is not a natural square root */
+	if ((maybe * maybe) > perfect) /* if NOT */
 	{
-		return (-1); /* Return error */
+		return (-1); /* return error */
 	}
 
-	return (_sqfinder(perfect, maybe + 1)); /* Recurse through, incrementing @maybe */
+	return (_sqfinder(perfect, maybe + 1)); /* recurse through, increment */
 }
 
 /**
- * _sqrt_recursion - Finds the square root of an integer.
- * @n: Given integer.
+ * _sqrt_recursion - finds an integers square root
+ * @n: given int
  *
- * Return: The square root of @n.
- */
+ * Return: sqare root of integer
+*/
+
 int _sqrt_recursion(int n)
 {
-	if (n < 0) /* Error checking for negative numbers */
-	{
-		return (-1);
-	}
-
-	return (_sqfinder(1, n)); /* Start recursion */
+	return (_sqfinder(n, 1));
 }
