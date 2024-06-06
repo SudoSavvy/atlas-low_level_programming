@@ -4,7 +4,7 @@
 /**
  * factorial: It returns the factorial of a given number.
  * @n: The number.
- * 
+ *
  * Return: int
 */
 
