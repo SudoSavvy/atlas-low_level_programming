@@ -26,7 +26,7 @@ int main(void)
 
     if (result == -1)
     {
-        printf("Error: factorial of a negative number doesn't exist.\n")
+        printf("Error: factorial of a negative number doesn't exist.\n");
     }
     else
     {
