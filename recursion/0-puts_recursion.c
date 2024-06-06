@@ -14,7 +14,7 @@ if (*s == '\0')
 
 }
 
-write(1, *s, 1);
+write(1, s, 1);
 
 _puts_recursion(s +1);
 }
