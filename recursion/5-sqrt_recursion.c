@@ -1,33 +1,36 @@
 #include "main.h"
 
 /**
- *  _sqrt_recursion - Returns the natural square root of a number.
- * @n: The number to find the square root of.
- * 
- * Return: The natural square root, or -1 if no natural square root exists. 
-*/
-int _sqrt_recursion(int n)
+ * _sqfinder - differentiates natural roots from approximates
+ * @maybe: maybe natural root, maybe not
+ * @perfect: perfect square
+ *
+ * Return: maybe if natural square root, -1 if not
+ */
+
+int _sqfinder(int maybe, int perfect)
 {
-    if (n < 0)
-    {
-        return(-1);
-    }
-    if (n == 0 || n == 1)
-    {
-        return (n);
-    }
-    return (_sqrt_recursion(n, 1));
+	if ((maybe * maybe) == perfect) /* if approximate is NATURAL ROOT */
+	{
+		return (maybe); /* return that */
+	}
+
+	if ((maybe * maybe) > perfect) /* if NOT */
+	{
+		return (-1); /* return error */
+	}
+
+	return (_sqfinder(perfect, maybe + 1)); /* recurse through, increment */
 }
 
-int _sqrt_recursion(int n, int guess)
+/**
+ * _sqrt_recursion - finds an integers square root
+ * @n: given int
+ *
+ * Return: sqare root of integer
+*/
+
+int _sqrt_recursion(int n)
 {
-    if (guess * guess == n)
-    {
-        return guess;
-    }
-    if (guess * guess > n)
-    {
-        return -1;
-    }
-    return (_sqrt_recursion(n, guess + 1));
+	return (_sqfinder(n, 1));
 }
