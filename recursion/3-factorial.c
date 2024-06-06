@@ -3,6 +3,7 @@
 #include <stdio.h>
 /**
  *factorial: It returns the factorial of a given number.
+ *@n: The number.
 */
 
 int factorial(int n)
