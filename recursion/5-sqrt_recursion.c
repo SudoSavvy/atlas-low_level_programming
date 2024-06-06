@@ -20,7 +20,7 @@ if (maybe * maybe > perfect)
 return (-1);
 }
 
-return (_sqfinder(maybe + 1, perfect)); 
+return (_sqfinder(maybe + 1, perfect));
 }
 
 /**
