@@ -1,28 +1,26 @@
 #include "main.h"
 
 /**
- * is_prime_number - Checks if a number is prime.
+ * is_divisible - Helper function to check if a number is divisible by another.
  * @n: The number to check.
+ * @divisor: The divisor to check against.
  *
- * Return: 1 if @n is prime, 0 otherwise.
+ * Return: 1 if @n is divisible by @divisor, 0 otherwise.
  */
+int is_divisible(int n, int divisor)
+{
+    if (n % divisor == 0)
+        return 1;
+    if (divisor * divisor > n)
+        return 0;
+    return is_divisible(n, divisor + 1);
+}
 
 int is_prime_number(int n)
 {
-    int i;
-
     if (n <= 1)
-    {
-        return (0);
-    }
-
-    for (i = 2; i * i <= n; i++)
-    {
-        if (n % i == 0)
-        {
-            return (0);
-        }
-    }
-
-    return (1);
+        return 0; // 0 and 1 are not prime numbers
+    if (n == 2)
+        return 1; // 2 is a prime number
+    return !is_divisible(n, 2);
 }
