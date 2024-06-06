@@ -18,10 +18,3 @@ putchar(*s);
 
 _puts_recursion(s +1);
 }
-
-int main()
-{
-    char str[] = "hello";
-    _puts_recursion(str);
-    return (0);
-}
