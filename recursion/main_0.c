@@ -19,3 +19,20 @@ int main(void)
 
     return (0);
 }
+
+int main(void)
+{
+    int num = 5;
+    int result = factorial(num);
+
+    if (result == -1)
+    {
+        printf("Error: factorial of a negative number doesn't exist.\n");
+    }
+    else
+    {
+        printf("Factorial of a %d is %d\n", num, result);
+    }
+
+    return(0);
+}
