@@ -36,3 +36,21 @@ int main(void)
 
     return(0);
 }
+
+int main(void)
+{
+int base = 2;
+int exponent = 3;
+int result = _pow_recursion(base, exponent);
+
+if (result == -1)
+{
+    printf("Error: exponent is negative.\n")
+}
+else
+{
+printf("%d^%d is %d\n", base, exponent, result);
+}
+
+return(0);
+}
