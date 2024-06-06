@@ -7,19 +7,20 @@
  *
  * Return: The square root if @maybe is a natural square root, -1 if not.
  */
+
 int _sqfinder(int maybe, int perfect)
 {
-    if (maybe * maybe == perfect) /* If @maybe is a natural square root */
-    {
-        return maybe; /* Return it */
-    }
+if (maybe * maybe == perfect)
+{
+return (maybe);
+}
 
-    if (maybe * maybe > perfect) /* If @maybe is not a natural square root */
-    {
-        return -1; /* Return error */
-    }
+if (maybe * maybe > perfect)
+{
+return (-1);
+}
 
-    return _sqfinder(maybe + 1, perfect); /* Recurse through, incrementing @maybe */
+return (_sqfinder(maybe + 1, perfect)); 
 }
 
 /**
@@ -30,10 +31,10 @@ int _sqfinder(int maybe, int perfect)
  */
 int _sqrt_recursion(int n)
 {
-    if (n < 0) /* Error checking for negative numbers */
-    {
-        return -1;
-    }
+if (n < 0)
+{
+return (-1);
+}
 
-    return _sqfinder(1, n); /* Start recursion */
+return (_sqfinder(1, n));
 }
