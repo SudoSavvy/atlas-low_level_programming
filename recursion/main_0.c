@@ -45,7 +45,7 @@ int result = _pow_recursion(base, exponent);
 
 if (result == -1)
 {
-    printf("Error: exponent is negative.\n")
+    printf("Error: exponent is negative.\n");
 }
 else
 {
