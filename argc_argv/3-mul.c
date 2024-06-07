@@ -13,7 +13,7 @@ int num1, num2, result;
 if (argc != 3)
 {
 printf("Error\n");
-return(1)
+return(1);
 }
 num1 = atoi(argv[1]);
 num2 = atoi(argv[2]);
