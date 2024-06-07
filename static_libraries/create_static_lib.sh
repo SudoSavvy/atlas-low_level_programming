@@ -1,3 +1,3 @@
 #!/bin/bash
 
-gcc -c *.c && ar rcs liball.a *.o
+sudo gcc -c *.c && sudo ar rcs liball.a *.o
