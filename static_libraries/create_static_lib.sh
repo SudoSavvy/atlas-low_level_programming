@@ -1,5 +1,6 @@
 #!/bin/bash
+chmod +x create_static_lib.sh
 
-sudo gcc -c *.c
+gcc -c *.c
 
-sudo ar rcs liball.a *.o
+ar rcs liball.a *.o
