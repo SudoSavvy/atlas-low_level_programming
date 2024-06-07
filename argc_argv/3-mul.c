@@ -4,7 +4,7 @@
  * main - Entry point for the program.
  * @argc: NUmber of arguments passed to the prorgram.
  * @argv: Array of pointers to the arguments
- * 
+ *
  * Return: 0 on success, 1 on error.
 */
 int main(int argc, char *argv[])
