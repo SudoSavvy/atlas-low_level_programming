@@ -34,7 +34,7 @@ concat = (char *)malloc((length1 + length2 + 1) * sizeof(char));
 
 /** Check if memory allocation was successful */
 if (concat == NULL)
-return(NULL);
+return (NULL);
 
 /** Copy s1 into the new string */
 for (i = 0; i < length1; i++)
