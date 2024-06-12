@@ -4,36 +4,38 @@
 
 /**
  * _strdup - Return a pointer to a newly allocated space in memory,
- * which contains a copyof the string given as a parameter.
+ *           which contains a copy of the string given as a parameter.
  *
- * @str: The input string duplicate.
+ * @str: The input string to duplicate.
  * 
- * Return: A pointer to the duplicated string on success. 
+ * Return: A pointer to the duplicated string on success.
+ *         NULL if str is NULL or if insufficient memory was available.
  */
-
 char *_strdup(char *str)
 {
-/** check if 'str' is NULL */
-if (str == NULL)
-return (NULL);
+    unsigned int length = 0;
+    char *copy;
+    unsigned int i;
 
-/** Determine the ength of 'str' */
-unsigned int length = 0;
-while (str[length] != '\0')
-length++;
+    /* Check if 'str' is NULL */
+    if (str == NULL)
+        return (NULL);
 
-/** Allocate memory for the new string */
-char *copy = (char *)malloc((length +1) * sizeof(char));
+    /* Determine the length of 'str' */
+    while (str[length] != '\0')
+        length++;
 
-/** Check if memory allocation was successful */
-if (copy == NULL)
-return (NULL);
+    /* Allocate memory for the new string */
+    copy = (char *)malloc((length + 1) * sizeof(char));
 
-/** copy the input string */
-for (unsigned int i = 0; i <= legnth; i++)
-copy[i] = str[i];
+    /* Check if memory allocation was successful */
+    if (copy == NULL)
+        return (NULL);
 
-/** return the duplicated string */
+    /* Copy the input string */
+    for (i = 0; i <= length; i++)
+        copy[i] = str[i];
 
-return (copy);
+    /* Return the duplicated string */
+    return (copy);
 }
