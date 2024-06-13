@@ -15,7 +15,7 @@ if (nmemb == 0 || size == 0)
 {
 return (NULL);
 }
-unsigned int total_size = nmemb * size;
+total_size = nmemb * size;
 
 void *ptr = malloc(total_size);
 if (ptr == NULL)
