@@ -16,5 +16,5 @@ if(ptr == NULL)
 {
 exit(98);
 }
-Return (ptr);
+return (ptr);
 }
