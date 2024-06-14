@@ -1,8 +1,6 @@
-#include <stdio.h>
-#include "abs.h"
+#ifndef abs_h
+#define abs_h
 
-int main(void) {
-int a = -5;
-printf("ABS(%d) = %d\n", a, ABS(a));
-return (0);
-}
+#define ABS(x) ((x) < 0 ? -(x) : (x))
+
+#endif
