@@ -5,7 +5,7 @@
  * Return: Always 0 (Success)
  */
 
-int main(void)
+/* int main(void) possible clashing main function fix */
 {
 printf("%s\n", __FILE__);
 return (0);
