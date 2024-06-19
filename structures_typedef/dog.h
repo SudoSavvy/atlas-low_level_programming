@@ -1,8 +1,14 @@
 #ifndef DOG_H
 #define DOG_H
+
 /**
- * Desc: This header file contains functions to complete
- * task 1 and create a struct.
+ * struct dog - A structure to store a dog's basic information
+ * @name: The name of the dog (char pointer)
+ * @age: The age of the dog (float)
+ * @owner: The owner of the dog (char pointer)
+ *
+ * Description: This structure is used to store the basic information
+ * about a dog, including its name, age, and owner.
  */
 typedef struct dog
 {
