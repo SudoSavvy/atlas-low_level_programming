@@ -9,7 +9,7 @@ void print_dog(struct dog *d)
 {
     if (d == NULL)
     {
-        printf("(NULL)\n");
+        printf("NULL\n");
         return;
     }
 
