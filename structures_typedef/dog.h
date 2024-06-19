@@ -1,6 +1,8 @@
 #ifndef DOG_H
 #define DOG_H
-
+/**
+ * Desc: This header file contains functions to complete task 1 and create a struct.
+ */
 typedef struct dog
 {
 char *name;
