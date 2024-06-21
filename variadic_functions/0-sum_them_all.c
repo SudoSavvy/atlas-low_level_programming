@@ -1,5 +1,4 @@
 #include <stdarg.h>
-#include <stdio.h>
 #include "variadic_functions.h"
 
 /**
@@ -27,12 +26,4 @@ sum += va_arg(args, int);
 va_end(args);
 
 return (sum);
-}
-
-int main(void)
-{
-printf("%d\n", sum_them_all(4, 1, 2, 3, 4)); /* Should print 10 */
-printf("%d\n", sum_them_all(0)); /* Should print 0 */
-printf("%d\n", sum_them_all(3, 5, 10, -2)); /* Should print 13 */
-return (0);
 }
