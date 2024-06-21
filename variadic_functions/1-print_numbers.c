@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include "variadic_functions.h"
 
 /**
  * print_numbers - Prints numbers, followed by a new line.
@@ -25,12 +26,4 @@ printf("%s", separator);
 va_end(args);
 
 printf("\n");
-}
-
-int main(void)
-{
-print_numbers(", ", 4, 1, 2, 3, 4); /* Should print: 1, 2, 3, 4 */
-print_numbers(NULL, 3, 5, 10, 15);  /* Should print: 5 10 15 */
-print_numbers(" - ", 2, 7, 8);      /* Should print: 7 - 8 */
-return (0);
 }
