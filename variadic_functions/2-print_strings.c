@@ -32,11 +32,3 @@ va_end(args);
 
 printf("\n");
 }
-
-int main(void)
-{
-print_strings(", ", 4, "Jay", "Django", "Python", "C");
-print_strings("; ", 3, "Hello", NULL, "World");
-print_strings(NULL, 2, "Alice", "Bob");
-return (0);
-}
