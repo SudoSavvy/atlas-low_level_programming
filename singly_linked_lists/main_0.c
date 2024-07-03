@@ -8,11 +8,11 @@
  */
 int main(void)
 {
-    list_t tail = {"School", NULL};
-    list_t head = {"Best", &tail};
+    list_t tail = {"School", 6, NULL};
+    list_t head = {"Best", 4, &tail};
 
     size_t count = print_list(&head);
-    printf("Number of nodes: %lu\n", count);
+    printf("Number of nodes: %lu\n", (unsigned long)count);
 
     return (0);
 }
