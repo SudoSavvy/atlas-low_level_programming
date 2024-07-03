@@ -19,7 +19,7 @@ list_t *add_node_end(list_t **head, const char *str)
         return NULL;
     }
 
-    while (new_node->str[length] != '\0')
+    while (new_node->str[length])
         length++;
 
     new_node->next = NULL;
