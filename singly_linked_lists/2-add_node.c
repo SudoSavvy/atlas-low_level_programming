@@ -16,16 +16,17 @@ unsigned int length = 0;
 const char *tmp = str;
 
 if (str == NULL)
-return NULL;
+return (NULL);
 
 new_node = malloc(sizeof(list_t));
 if (new_node == NULL)
-return NULL;
+return (NULL);
 
 new_node->str = strdup(str);
-if (new_node->str == NULL) {
+if (new_node->str == NULL)
+{
 free(new_node);
-return NULL;
+return (NULL);
 }
 
 while (*tmp++)
@@ -35,5 +36,5 @@ new_node->len = length;
 new_node->next = *head;
 *head = new_node;
 
-return new_node;
+return (new_node);
 }
