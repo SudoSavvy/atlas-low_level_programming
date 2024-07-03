@@ -1,0 +1,1 @@
+I infact lnow how to do a proper readme now, but i dont want to spend that much time one one for every dirctory for these four projects.
