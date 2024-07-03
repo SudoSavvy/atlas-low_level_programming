@@ -12,7 +12,7 @@ int main(void)
     list_t head = {"Best", &tail};
 
     size_t count = print_list(&head);
-    printf("Number of nodes: %lu\n", count);
+    printf("Number of nodes: %lu\n", (unsigned long)count);
 
     return (0);
 }
