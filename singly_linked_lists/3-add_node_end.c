@@ -45,7 +45,7 @@ current = current->next;
 current->next = new_node;
 }
 
-// Print the length of the string and the string itself
+/*Print the length of the string and the string itself*/
 printf("[%lu] %s\n", strlen(new_node->str), new_node->str);
 
 return new_node; /* Return the address of the new element */
