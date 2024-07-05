@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -5,7 +6,7 @@
 #include <stdarg.h>
 #include <sys/stat.h>
 #include <sys/types.h>
-#include "main.h"
+#include <errno.h>
 #include <string.h>
 
 #define BUFFER_SIZE 1024
@@ -34,20 +35,20 @@ void copy_file(const char *file_from, const char *file_to) {
     ssize_t bytes_read, bytes_written;
     char buffer[BUFFER_SIZE];
 
-    // Open file_from for reading
+    /* Open file_from for reading */
     fd_from = open(file_from, O_RDONLY);
     if (fd_from == -1) {
         print_error_and_exit(98, "Error: Can't read from file %s: %s\n", file_from, strerror(errno));
     }
 
-    // Open file_to for writing, create if it doesn't exist, truncate if it does
+    /* Open file_to for writing, create if it doesn't exist, truncate if it does */
     fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0644);
     if (fd_to == -1) {
         close(fd_from);
         print_error_and_exit(99, "Error: Can't write to file %s: %s\n", file_to, strerror(errno));
     }
 
-    // Copy contents from file_from to file_to
+    /* Copy contents from file_from to file_to */
     while ((bytes_read = read(fd_from, buffer, BUFFER_SIZE)) > 0) {
         bytes_written = write(fd_to, buffer, bytes_read);
         if (bytes_written != bytes_read) {
@@ -67,7 +68,7 @@ void copy_file(const char *file_from, const char *file_to) {
         print_error_and_exit(98, "Error: Can't read from file %s: %s\n", file_from, strerror(errno));
     }
 
-    // Close file descriptors
+    /* Close file descriptors */
     if (close(fd_from) == -1) {
         print_error_and_exit(100, "Error: Can't close fd %d: %s\n", fd_from, strerror(errno));
     }
@@ -86,7 +87,7 @@ int main(int argc, char *argv[]) {
     file_from = argv[1];
     file_to = (argc == 3) ? argv[2] : ""; // If file_to not provided, use empty string
 
-    // Check if file_from exists and is readable
+    /* Check if file_from exists and is readable */
     if (access(file_from, F_OK) == -1) {
         print_error_and_exit(98, "Error: Can't read from file %s: File doesn't exist\n", file_from);
     }
@@ -94,14 +95,14 @@ int main(int argc, char *argv[]) {
         print_error_and_exit(98, "Error: Can't read from file %s: No read permissions\n", file_from);
     }
 
-    // If file_to is provided, check if it's writable
+    /* If file_to is provided, check if it's writable */
     if (*file_to != '\0') {
         if (access(file_to, W_OK) == -1 && access(file_to, F_OK) == 0) {
             print_error_and_exit(99, "Error: Can't write to file %s: No write permissions\n", file_to);
         }
     }
 
-    // Perform the copy operation
+    /* Perform the copy operation */
     copy_file(file_from, file_to);
 
     return 0;
