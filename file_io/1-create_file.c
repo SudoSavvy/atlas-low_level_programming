@@ -48,29 +48,3 @@ int create_file(const char *filename, char *text_content)
     close(fd);
     return (1);
 }
-
-/* Test the function */
-int main(int argc, char *argv[])
-{
-    int result;
-
-    /* Check if the correct number of arguments is provided */
-    if (argc != 2)
-    {
-        fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
-        return (1);
-    }
-
-    /* Call create_file function and handle result */
-    result = create_file(argv[1], "Wait !\nYou should not be able to see this !");
-    if (result == 1)
-    {
-        printf("File created successfully.\n");
-    }
-    else
-    {
-        printf("Failed to create file.\n");
-    }
-
-    return (0);
-}
