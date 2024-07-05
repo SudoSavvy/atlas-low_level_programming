@@ -44,7 +44,6 @@ int create_file(const char *filename, char *text_content)
     return (1);
 }
 
-// Test the function
 int main(int argc, char *argv[])
 {
     if (argc != 2)
