@@ -29,17 +29,3 @@ void print_binary(unsigned long int n)
 	}
 }
 
-/**
- * main - Entry point for testing the print_binary function
- * Return: 0 on success
- */
-int main(void)
-{
-	unsigned long int num = 10;
-
-	printf("Binary representation of %lu: ", num);
-	print_binary(num);
-	putchar('\n');
-
-	return (0);
-}
