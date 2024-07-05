@@ -1,50 +1,33 @@
-#include <fcntl.h>   /* For open, O_CREAT, O_WRONLY, O_TRUNC */
-#include <unistd.h>  /* For write, close */
-#include <sys/stat.h> /* For S_IRUSR, S_IWUSR */
-#include <stdio.h>   /* For perror */
-#include <stdlib.h>  /* For malloc, free */
+#include "main.h"
 
 /**
- * create_file - Creates a file with specific permissions and writes content to it
- * @filename: The name of the file to create
- * @text_content: A NULL terminated string to write to the file
+ * create_file - Creates a file.
+ * @filename: A pointer to the name of the file to create.
+ * @text_content: A pointer to a string to write to the file.
  *
- * Return: 1 on success, -1 on failure
+ * Return: If the function fails - -1.
+ *         Otherwise - 1.
  */
 int create_file(const char *filename, char *text_content)
 {
-    int fd, bytes_written, len = 0;
+	int o, w, len = 0;
 
-    /* Check if filename is NULL */
-    if (filename == NULL)
-        return (-1);
+	if (filename == NULL)
+		return (-1);
 
-    /* Check if text_content is NULL */
-    if (text_content == NULL)
-        text_content = "";
+	if (text_content != NULL)
+	{
+		for (len = 0; text_content[len];)
+			len++;
+	}
 
-    /* Calculate length of text_content */
-    while (text_content[len])
-        len++;
+	o = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	w = write(o, text_content, len);
 
-    /* Open the file with specific permissions */
-    fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR);
-    if (fd == -1)
-    {
-        perror("Error opening file");
-        return (-1);
-    }
+	if (o == -1 || w == -1)
+		return (-1);
 
-    /* Write content to the file */
-    bytes_written = write(fd, text_content, len);
-    if (bytes_written == -1)
-    {
-        perror("Error writing to file");
-        close(fd);
-        return (-1);
-    }
+	close(o);
 
-    /* Close the file descriptor */
-    close(fd);
-    return (1);
+	return (1);
 }
