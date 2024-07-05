@@ -2,7 +2,7 @@
 #define MAIN_H
 
 /*
- * File: holberton.h
+ * File: main.h
  * Desc: Header file containing prototypes for all functions
  *       written in the file_io directory.
  */
