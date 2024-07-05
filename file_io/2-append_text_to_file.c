@@ -16,7 +16,7 @@ ssize_t bytes_written;
 
 /* Check if filename is NULL */
 if (filename == NULL)
-return -1;
+return (-1);
 
 /* Check if text_content is NULL or empty */
 if (text_content == NULL || text_content[0] == '\0')
@@ -31,7 +31,7 @@ fd = open(filename, O_WRONLY | O_APPEND);
 if (fd == -1)
 {
 perror("Error opening file for append");
-return -1;
+return (-1);
 }
 
 /* Append text_content to the file */
@@ -40,10 +40,10 @@ if (bytes_written == -1)
 {
 perror("Error writing to file");
 close(fd);
-return -1;
+return (-1);
 }
 
 /* Close the file descriptor */
 close(fd);
-return 1;
+return (1);
 }
